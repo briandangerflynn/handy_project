@@ -1,0 +1,21 @@
+Quiz Type: <%= @quiz.service_type %><br>
+Quiz ID: <%= @quiz.id %><br>
+Question: <%= @question.text %>
+<hr>
+
+<%= form_for @answer, url: {action: "create"} do |f| %>
+
+    <%= f.hidden_field :question_id, :value => @question.id %>
+
+    <%= f.text_area :text, :placeholder => "Enter answer text" %>
+
+    <br>
+    <%= f.check_box :is_correct %>
+    <%= f.label "This is the correct answer" %>
+
+
+    <br>
+
+    <%= f.submit "Add Answer" %>
+
+<% end %>

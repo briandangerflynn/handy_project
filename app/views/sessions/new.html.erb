@@ -1,0 +1,13 @@
+
+<div id="create-candidate" class="form">
+  <h2>Log In</h2>
+  <%= form_tag '/login' do %>
+
+    <p><%= text_field_tag :email, nil, placeholder: 'Email' %></p>
+
+    <%= submit_tag "Log In", :class => "button" %>
+
+  <% end %>
+
+  <p>New to Handy? <%= link_to "Create Account", new_candidate_path %></p>
+</div>

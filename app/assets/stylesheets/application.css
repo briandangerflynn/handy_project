@@ -1,0 +1,179 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* handy blue == #00CDED */
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+#container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
+.blue-link {
+  color: #00CDED;
+  text-decoration: underline;
+}
+
+.flash-notice {
+  position: fixed;
+  top: 10px;
+  padding: 15px;
+  font-weight: bold;
+  z-index: 10;
+  width: 100%;
+}
+
+#flash-success {
+  background-color: green;
+}
+
+#flash-fail {
+  background-color: red;
+}
+
+
+/* header stuff */
+header {
+  height: 60px;
+  overflow: auto;
+  line-height: 60px;
+}
+
+#header-links {
+  width: 80%;
+  float: right;
+  text-align: right;
+}
+
+#header-links a {
+  padding-right: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+#header-links a:hover {
+  color: #00CDED;;
+}
+
+#handy-logo {
+  padding-top: 5px;
+  width: 70px;
+}
+/* end of header stuff */
+
+
+/* admin page stuff */
+#admin-main {
+  text-align: center;
+}
+/* end admin page stuff */
+
+
+/* general form stuff */
+.form {
+  margin: 0 auto;
+  width: 400px;
+  text-align: center;
+}
+
+.form input {
+  padding-left: 10px;
+}
+
+.form input, select, .button {
+  box-sizing: border-box;
+  height: 50px;
+  width: 300px;
+  border: 1px solid slategray;
+  border-radius: 7px;
+}
+
+.button {
+  color: white;
+  background-color: #00CDED;
+  font-size: 16px;
+  -webkit-appearance: none;
+}
+/* end of general form stuff */
+
+
+/* candidate profile page */
+#candidate-profile-header {
+  text-align: center;
+}
+
+#profile-score {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.response-details {
+  margin-bottom: 30px;
+}
+
+.response-details h4 {
+  margin-bottom: 5px;
+}
+
+.response-details p {
+  margin-top: 0;
+}
+/* end of candidate profile page */
+
+
+/* quiz respnse pages */
+#quiz-header {
+  text-align: center;
+}
+
+.quiz-question {
+  border: 1px solid black;
+  padding: 25px;
+  border-radius: 5px;
+}
+
+.quiz-question .button {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* end of quiz response pages */
+
+
+/* quiz creation pages */
+#quiz-index-main {
+  text-align: center;
+}
+
+/* end of quiz creation pages */
+

@@ -1,0 +1,26 @@
+
+<div id="quiz-header">
+  <h2><%= @quiz.service_type %> Quiz</h2>
+  <h4>Question <%= @count +1 %> of <%= @questions.count %></h4>
+</div>
+
+<div class="quiz-question">
+  <h4><%= @count +1 %>. <%= @questions[@count].text.capitalize %></h4>
+
+  <%= form_for @response, url: {action: "create"} do |f| %>
+    <%= f.hidden_field :question_text, :value => @questions[@count].text %>
+    <%= f.hidden_field :candidate_id, :value => @candidate.id %>
+
+    <% @answers = Answer.where(question_id: @questions[@count].id).all %>
+
+    <% @answers.each do |answer| %>
+      <p><%= f.radio_button :answer_text, answer.text %>
+      <%= f.label :answer_text, answer.text.capitalize, :value => answer.text %></p>
+    <% end %>
+
+    <%= f.submit "Confirm Answer", :class => "submit-response button" %>
+  <% end %>
+
+</div>
+
+

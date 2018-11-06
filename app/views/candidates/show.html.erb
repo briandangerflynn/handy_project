@@ -1,0 +1,32 @@
+
+<div id="candidate-profile-header">
+  <h2>Candidate Profile</h2>
+  <p>NAME: <%= @candidate.name %></p>
+
+  <% if @candidate.quiz_completed != true %>
+    <%= link_to "Take Quiz", new_candidate_response_path(@candidate) %>
+</div>
+  <% else %>
+</div>
+<div id="candidate-profile-details">
+    <p id="profile-score">SCORE: <%= @candidate.score %> / <%= @questions.count %></p>
+    <h3>Answers:</h3>
+    <hr>
+    <% @responses.each do |response| %>
+      <div class="response-details">
+
+        <h4><%= response.question_text.capitalize %></h4>
+
+        <% if response.is_correct %>
+          <p class="correct">CORRECT: <%= response.answer_text.capitalize %></p>
+        <% else %>
+          <p class="incorrect">INCORRECT: <%= response.answer_text.capitalize %></p>
+        <% end %>
+
+      </div>
+    <% end %>
+
+  <% end %>
+</div>
+
+

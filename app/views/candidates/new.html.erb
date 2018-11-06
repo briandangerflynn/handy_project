@@ -1,0 +1,19 @@
+
+<div id="create-candidate" class="form">
+  <h2>Create Account</h2>
+  <%= form_for @candidate, url: {action: "create"} do |f| %>
+
+    <p><%= f.text_field :name, :placeholder => "Full Name" %></p>
+
+    <p><%= f.text_field :email, :placeholder => "Email" %></p>
+
+    <p><%= f.select :service_type, options_for_select(service_types), :prompt => "Service Type" %></p>
+
+    <%= f.hidden_field :quiz_completed, :value => false %>
+    <%= f.hidden_field :score, :value => 0 %>
+
+    <%= f.submit "Get Started", :class => "button" %>
+
+  <% end %>
+  <p>Already have an account? <%= link_to "Log In", login_path %></p>
+</div>

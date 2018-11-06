@@ -1,0 +1,9 @@
+
+<h2>Create New Quiz</h2>
+<%= form_for @quiz, url: {action: "create"} do |f| %>
+
+    <p><%= f.select :service_type, options_for_select(service_types), :prompt => "Service Type" %></p>
+
+    <%= f.submit "Create", :class => "button" %>
+
+<% end %>

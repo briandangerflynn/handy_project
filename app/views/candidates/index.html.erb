@@ -1,0 +1,3 @@
+<% @candidates.each do |candidate| %>
+  <p><%= link_to candidate.name, candidate_path(candidate) %> &mdash; Score: <%= candidate.score %></p>
+<% end %>

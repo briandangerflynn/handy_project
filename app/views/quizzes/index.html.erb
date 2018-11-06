@@ -1,0 +1,11 @@
+<div id="quiz-index-main">
+  <h2>Current Quizzes</h2>
+  <% @quizzes.each do |quiz| %>
+    <%= link_to quiz_path(quiz) do %>
+      <button class="button"><%= quiz.service_type %></button>
+    <% end %>
+    <br><br>
+  <% end %>
+  <hr>
+  <p><a href="/quizzes/new" class="blue-link">Create New Quiz</a></p>
+</div>

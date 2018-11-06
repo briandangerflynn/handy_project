@@ -1,0 +1,12 @@
+<%= @quiz.service_type %>
+<%= @quiz.id %>
+
+<%= form_for @question, url: {action: "create"} do |f| %>
+
+    <%= f.number_field :quiz_id, :value => @quiz.id %>
+
+    <%= f.text_area :text, :placeholder => "Enter question text" %>
+
+    <%= f.submit "Add Question" %>
+
+<% end %>

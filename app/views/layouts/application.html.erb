@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HandyProject</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <!-- adjusts app to look correct on most devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <% if flash[:success] %>
+      <div id="flash-success" class="flash-notice"><%= flash[:success] %></div>
+    <% elsif flash[:fail] %>
+      <div id="flash-fail" class="flash-notice"><%= flash[:fail] %></div>
+    <% end %>
+
+    <div id="container">
+      <header>
+
+        <img id="handy-logo" src="/assets/handy-logo.png" alt="handy logo">
+
+        <div id="header-links">
+
+          <%= link_to "Admin", admin_path %>
+
+          <% if current_candidate %>
+            <%= link_to "Profile", candidate_path(current_candidate) %>
+            <%= link_to "Log Out", logout_path %>
+          <% end %>
+        </div>
+
+      </header>
+
+
+    <%= yield %>
+
+    </div>
+  </body>
+</html>

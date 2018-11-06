@@ -1,0 +1,5 @@
+2018-11-05 03:36:27.474 EST [41594] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-05 03:36:27.474 EST [41594] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-05 03:36:27.475 EST [41594] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-05 03:36:27.511 EST [41595] LOG:  database system was shut down at 2018-09-04 16:09:06 EDT
+2018-11-05 03:36:27.517 EST [41594] LOG:  database system is ready to accept connections
