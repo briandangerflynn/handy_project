@@ -29,9 +29,22 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    @quiz = Quiz.find(params[:quiz_id])
+    @question = Question.find_by(id: params[:id])
   end
 
   def update
+    @quiz = Quiz.find(params[:quiz_id])
+    @question = Question.find_by(id: params[:id])
+      @question.assign_attributes(question_params)
+
+      if @question.update_attributes(question_params)
+        flash[:success] = "Question updated successfully."
+       redirect_to quiz_path(@quiz)
+      else
+        flash[:fail] = "Error updating question. Please try again."
+       redirect_to edit_quiz_question_path(@question)
+      end
   end
 
   def destroy

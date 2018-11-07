@@ -1,28 +1,21 @@
-Quiz Type: <%= @quiz.service_type %><br>
-Quiz ID: <%= @quiz.id %><br>
-
-<br>
+<h2>Quiz Type: <%= @quiz.service_type %></h2>
 <hr>
-<br>
 
 <% if @questions %>
   <% @questions.each_with_index do |question, index| %>
-    <b><%= index + 1 %>. <%= question.text.capitalize %></b>
-
-    <br>
+    <h4><%= index + 1 %>. <%= question.text.capitalize %></h4>
 
     <% question.answers.each_with_index do |answer, index| %>
       <% if answer.is_correct %>
-        Answer #<%= index + 1 %>: <span class="correct"><%= answer.text.capitalize %></span><br>
+        <p>Answer #<%= index + 1 %>: <span class="correct"><%= answer.text.capitalize %> <small>(correct)</small></span></p>
       <% else %>
-        Answer #<%= index + 1 %>: <span class="incorrect"><%= answer.text.capitalize %></span><br>
+        <p>Answer #<%= index + 1 %>: <span class="incorrect"><%= answer.text.capitalize %></span></p>
       <% end %>
     <% end %>
 
 
-    <%= link_to "Add Answer", new_quiz_question_answer_path(@quiz, question) %>
+    <p><%= link_to "Add Answer", new_quiz_question_answer_path(@quiz, question) %><p>
 
-    <br><br>
 
   <% end %>
 <% end %>
@@ -31,4 +24,8 @@ Quiz ID: <%= @quiz.id %><br>
 <hr>
 <br>
 
-<%= link_to "Add Question", new_quiz_question_path(@quiz) %>
+<%= link_to new_quiz_question_path(@quiz) do %>
+  <button class="button">Add Question</button>
+<% end %>
+
+<br><br>
