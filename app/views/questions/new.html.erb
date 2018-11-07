@@ -1,12 +1,14 @@
-<%= @quiz.service_type %>
-<%= @quiz.id %>
+<center>
+  <h2>Add New Question</h2>
+  <p>Service: <%= @quiz.service_type %></p>
 
-<%= form_for @question, url: {action: "create"} do |f| %>
+  <%= form_for @question, url: {action: "create"} do |f| %>
 
-    <%= f.number_field :quiz_id, :value => @quiz.id %>
+      <%= f.hidden_field :quiz_id, :value => @quiz.id %>
 
-    <%= f.text_area :text, :placeholder => "Enter question text" %>
+      <p><%= f.text_area :text, :size => "60x8", :placeholder => "Enter question text" %></p>
 
-    <%= f.submit "Add Question" %>
+      <%= f.submit "Add Question", :class => "button" %>
 
-<% end %>
+  <% end %>
+</center>
