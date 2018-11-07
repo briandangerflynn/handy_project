@@ -188,5 +188,15 @@ header {
   text-align: center;
 }
 
+textarea {
+  width: 400px;
+  height: 100px;
+  max-width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 /* end of quiz creation pages */
 

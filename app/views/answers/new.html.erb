@@ -1,16 +1,13 @@
 <h2><%= @quiz.service_type %>: Add New Answer</h2>
 <p><b>Question:</b> <%= @question.text %></p>
-<br>
-<hr>
+
 
 <%= form_for @answer, url: {action: "create"} do |f| %>
 
     <%= f.hidden_field :question_id, :value => @question.id %>
 
-    <br>
 
-
-    <p><%= f.text_area :text, :size => "60x8", :placeholder => "Enter answer text" %></p>
+    <p><%= f.text_area :text, :placeholder => "Enter answer text" %></p>
 
     <%= f.check_box :is_correct %>
     <%= f.label "This is the correct answer" %>
