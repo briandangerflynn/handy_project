@@ -70,13 +70,13 @@ header {
 }
 
 #header-links {
-  width: 50%;
+  width: 70%;
   float: right;
   text-align: right;
 }
 
 #header-links a {
-  padding-right: 20px;
+  padding-right: 15px;
   text-decoration: none;
   color: black;
 }
