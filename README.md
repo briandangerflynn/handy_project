@@ -1,27 +1,11 @@
-# README
+HOW TO SET UP AND RUN APP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Step 1: Use the terminal to enter the handy_project folder.
 
-Things you may want to cover:
+Step 2: Once inside the folder, type rake db:migrate and rake db:seed into the terminal to load the apps schema and generate some base data.
 
-* Ruby version
+Step 3: Type rails s into the terminal to launch a rails server.
 
-* System dependencies
+Step 4: In a web browser, visit localhost:3000\
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-=======
-# handy_project
->>>>>>> 9bcb4377ff60aabdd73e5ba9803a127ca54fc70a
+Step 5: Party.
