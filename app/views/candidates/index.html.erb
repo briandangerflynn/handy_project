@@ -1,3 +1,35 @@
-<% @candidates.each do |candidate| %>
-  <p><%= link_to candidate.name, candidate_path(candidate) %> &mdash; Score: <%= candidate.score %></p>
+<center>
+  <h2>Candidates</h2>
+</center>
+
+<% if @candidates.count == 0 %>
+  <center>There are currently no candidates.</center>
+<% else %>
+
+<center>
+  <p>Sort by:
+    <%= link_to "Name", candidates_path(order: 'name') %> |
+    <%= link_to "Score", candidates_path(order: 'score') %>
+  </p>
+</center>
+  <br>
+  <p>
+    <span class="forty"><b>Name</b></span>
+    <span class="forty"><b>Service</b></span>
+    <span class="twenty"><b>Score</b></span>
+  </p>
+  <hr>
+
+  <% @candidates.each do |candidate| %>
+    <% @response = Response.where(candidate_id: candidate.id).all %>
+
+    <p>
+      <span class="forty"><%= link_to candidate.name, candidate_path(candidate) %></span>
+
+      <span class="forty"><%= candidate.service_type %></span>
+
+      <span class="twenty"><%= ((candidate.score.to_f / @response.count) * 100).round() %>&percnt;</span>
+    </p>
+  <% end %>
+
 <% end %>

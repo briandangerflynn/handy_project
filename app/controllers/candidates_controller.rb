@@ -2,10 +2,15 @@ class CandidatesController < ApplicationController
 
   def index
     @candidates = Candidate.all
+
+    if params[:order] == 'score'
+      @candidates = Candidate.all.order(score: :desc)
+    elsif params[:order] == 'name'
+      @candidates = Candidate.all.order('name')
+    end
   end
 
   def show
-    if current_candidate
       @candidate = Candidate.find(params[:id])
       @quiz = Quiz.where(service_type: @candidate.service_type).first
       @questions = Question.where(quiz_id: @quiz.id)
@@ -18,9 +23,6 @@ class CandidatesController < ApplicationController
       end
 
     @candidate.update_attributes(score: @score)
-    else
-      redirect_to "/login"
-    end
   end
 
   def create

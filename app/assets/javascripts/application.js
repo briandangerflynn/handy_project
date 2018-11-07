@@ -19,6 +19,6 @@
 
 $(function() {
     setTimeout(function(){
-      $('.flash-notice').slideUp(500);
-    }, 5000);
+      $('.flash-notice').slideUp(300);
+    }, 2500);
   });

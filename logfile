@@ -3,3 +3,29 @@
 2018-11-05 03:36:27.475 EST [41594] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
 2018-11-05 03:36:27.511 EST [41595] LOG:  database system was shut down at 2018-09-04 16:09:06 EDT
 2018-11-05 03:36:27.517 EST [41594] LOG:  database system is ready to accept connections
+2018-11-06 21:44:42.270 EST [64627] ERROR:  database "handy_project_development" is being accessed by other users
+2018-11-06 21:44:42.270 EST [64627] DETAIL:  There is 1 other session using the database.
+2018-11-06 21:44:42.270 EST [64627] STATEMENT:  DROP DATABASE IF EXISTS "handy_project_development"
+2018-11-06 22:52:37.554 EST [66014] ERROR:  database "handy_project_development" is being accessed by other users
+2018-11-06 22:52:37.554 EST [66014] DETAIL:  There is 1 other session using the database.
+2018-11-06 22:52:37.554 EST [66014] STATEMENT:  DROP DATABASE IF EXISTS "handy_project_development"
+2018-11-06 23:13:30.041 EST [66470] ERROR:  non-integer constant in ORDER BY at character 50
+2018-11-06 23:13:30.041 EST [66470] STATEMENT:  SELECT "candidates".* FROM "candidates" ORDER BY 'score' DESC, "candidates"."name" ASC
+2018-11-06 23:13:54.435 EST [66470] ERROR:  non-integer constant in ORDER BY at character 50
+2018-11-06 23:13:54.435 EST [66470] STATEMENT:  SELECT "candidates".* FROM "candidates" ORDER BY 'score' DESC
+2018-11-06 23:58:11.300 EST [68378] ERROR:  duplicate key value violates unique constraint "candidates_pkey"
+2018-11-06 23:58:11.300 EST [68378] DETAIL:  Key (id)=(1) already exists.
+2018-11-06 23:58:11.300 EST [68378] STATEMENT:  INSERT INTO "candidates" ("name", "email", "service_type", "quiz_completed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"
+2018-11-06 23:59:37.415 EST [68475] FATAL:  lock file "postmaster.pid" already exists
+2018-11-06 23:59:37.415 EST [68475] HINT:  Is another postmaster (PID 41594) running in data directory "/usr/local/var/postgres/data"?
+2018-11-06 23:59:51.146 EST [68545] FATAL:  lock file "postmaster.pid" already exists
+2018-11-06 23:59:51.146 EST [68545] HINT:  Is another postmaster (PID 41594) running in data directory "/usr/local/var/postgres/data"?
+2018-11-07 00:00:39.163 EST [68612] ERROR:  duplicate key value violates unique constraint "candidates_pkey"
+2018-11-07 00:00:39.163 EST [68612] DETAIL:  Key (id)=(2) already exists.
+2018-11-07 00:00:39.163 EST [68612] STATEMENT:  INSERT INTO "candidates" ("name", "email", "service_type", "quiz_completed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"
+2018-11-07 00:00:48.669 EST [68615] ERROR:  duplicate key value violates unique constraint "candidates_pkey"
+2018-11-07 00:00:48.669 EST [68615] DETAIL:  Key (id)=(3) already exists.
+2018-11-07 00:00:48.669 EST [68615] STATEMENT:  INSERT INTO "candidates" ("name", "email", "service_type", "quiz_completed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"
+2018-11-07 00:02:02.146 EST [68643] ERROR:  duplicate key value violates unique constraint "candidates_pkey"
+2018-11-07 00:02:02.146 EST [68643] DETAIL:  Key (id)=(4) already exists.
+2018-11-07 00:02:02.146 EST [68643] STATEMENT:  INSERT INTO "candidates" ("name", "email", "service_type", "quiz_completed", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"

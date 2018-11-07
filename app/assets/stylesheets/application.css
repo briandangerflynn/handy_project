@@ -54,11 +54,11 @@ body {
 }
 
 #flash-success {
-  background-color: green;
+  background-color: #9CF597;
 }
 
 #flash-fail {
-  background-color: red;
+  background-color: #FB7E76;
 }
 
 
@@ -127,6 +127,19 @@ header {
 /* end of general form stuff */
 
 
+/* candidate index page */
+.forty {
+  display: inline-block;
+  width: 40%;
+}
+
+.twenty {
+  display: inline-block;
+  width: 17%;
+}
+/* end of candidate index page */
+
+
 /* candidate profile page */
 #candidate-profile-header {
   text-align: center;
@@ -151,7 +164,7 @@ header {
 /* end of candidate profile page */
 
 
-/* quiz respnse pages */
+/* quiz response pages */
 #quiz-header {
   text-align: center;
 }
