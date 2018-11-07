@@ -1,7 +1,7 @@
 class CandidatesController < ApplicationController
 
   def index
-    @candidates = Candidate.all
+    @candidates = Candidate.where(quiz_completed: true).order(score: :desc)
 
     if params[:order] == 'score'
       @candidates = Candidate.all.order(score: :desc)
